@@ -8,7 +8,8 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit{
-  searchresult:undefined|product[];
+  searchresult:product[]|any;
+  p:number=1;
   nodata:string = '';
   constructor(private activeroute:ActivatedRoute,private product:ProductService){}
   ngOnInit(): void {
@@ -20,6 +21,19 @@ export class SearchComponent implements OnInit{
         this.nodata="no data matches your search"
       }
       
+    })
+  }
+  Filterchange(event:Event){
+    const filvalue = (event.target as HTMLInputElement).value;
+    this.product.filterbygenre(filvalue).subscribe((res)=>{
+      if(res){this.searchresult=res;}
+      
+    })
+                          
+  }
+  sortbyPrice(){
+    this.product.sortbyPrice().subscribe((x)=>{
+      if(x){this.searchresult=x;}
     })
   }
 }

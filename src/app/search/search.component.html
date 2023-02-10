@@ -1,12 +1,33 @@
-<div class = "row search-item" *ngFor="let item of searchresult">
-    <p>{{nodata}}</p>
-    <div class="col-sm-3">
-       <a routerLink="/details/{{item.id}}"> <img src="{{item.image}}" alt=""></a>
-    </div>
-    <div class ="col-sm-8 details">
-        <h6> <a routerLink="/details/{{item.id}}">{{item.name}}</a></h6>
-        <p><b>{{item.price}}</b></p>
-        <p><span>{{item.color}}</span><span>{{item.category}}</span></p>
-        <p>{{item.desc}}</p>
-    </div>
+<div class="start">
+    <ul>
+        <li><mat-label>FILTER</mat-label>
+            <input class="form-input" matInput placeholder="Filter By Genre" (keyup)="Filterchange($event)">
+            </li>
+            <li>
+                <button  class="form-button" (click)="sortbyPrice()">SORT</button>
+            </li>
+    </ul>
 </div>
+    
+
+<ul>
+    <li *ngFor="let item of searchresult | paginate: { itemsPerPage: 4, currentPage: p }"> 
+        <div class = "row search-item" >
+            <p>{{nodata}}</p>
+            
+            <div class="col-sm-3">
+               <a routerLink="/details/{{item.id}}"> <img src="{{item.img}}" alt=""></a>
+            </div>
+            <div class ="col-sm-8 details">
+                <h6> <a routerLink="/details/{{item.id}}">{{item.name}}</a></h6>
+                <p><b>{{item.price}}</b></p>
+                <p><span>{{item.stime}}</span><span>{{item.genre}}</span></p>
+                <p>{{item.desc}}</p>
+            </div>
+        </div>
+         </li>
+  </ul>
+
+
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

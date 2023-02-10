@@ -22,3 +22,20 @@
 .details a{
     text-decoration: none;
 }
+.start{
+    display: flex;
+    background-color: cornflowerblue;
+    padding-top: 20px;
+    justify-content: space-between;
+    padding-left: 15px;
+    
+}
+.start ul{
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.start ul li{
+    padding-left: 35px;
+}

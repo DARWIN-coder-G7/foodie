@@ -18,7 +18,7 @@ body{
     margin-bottom: 20px;
     border: 1px solid aqua;
     padding-left: 15px;
-    color: aqua;
+    color: rgb(55, 0, 255);
 }
 .form-button{
     height: 35px;
@@ -31,6 +31,7 @@ body{
 }
 .message-p{
     color: greenyellow;
+    text-align: center;
 }
 .carousel-caption{
    
@@ -51,4 +52,10 @@ button:disabled{
 }
 .max-width{
     width: 100%;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.texcol{
+    text-emphasis-color: red;
+    color:rgb(255, 0, 119);
 }

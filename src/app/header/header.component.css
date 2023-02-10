@@ -1,6 +1,9 @@
 .nav{
     display: flex;
     justify-content: space-between;
+    background: black;
+    border-radius: 5px;
+    
 }
 .nav h1{
     color: blueviolet;
@@ -16,7 +19,8 @@
 }
 .nav .nav-search input{
     flex: 1;
-    color: aquamarine;
+    color: rgb(7, 31, 23);
+    background-color: bisque;
     border: 1px solid aqua;
     height: 39px;
     border-right: none;
@@ -43,7 +47,7 @@
 }
 h1 a{
     color: rgb(36, 207, 245);
-
+  text-decoration: none;
 }
 .suggested-search{
     position: absolute;

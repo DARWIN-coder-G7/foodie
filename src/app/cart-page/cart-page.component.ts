@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { cart, pricesummary } from '../data-type';
+import { cart, pricesummary, product } from '../data-type';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { ProductService } from '../services/product.service';
 })
 export class CartPageComponent implements OnInit {
   cartdata:cart[]|undefined;
+  cartprod:product|undefined;
   cartsummary:pricesummary={
     price:0,
     dicount:0,
@@ -36,4 +37,19 @@ export class CartPageComponent implements OnInit {
  checkout(){
   this.router.navigate(['/checkout'])
  }
+ removefromcart(id:number){
+  if(!localStorage.getItem('user')){
+  this.product.removeitemfromcart(id);
+ }else{
+  this.cartdata && this.product.removefromremotecart(id)
+  .subscribe((result)=>{
+    let user = localStorage.getItem('user');
+      let userid = user && JSON.parse(user).userid;
+    this.product.getcartlist(userid);
+    this.product.currentcart().subscribe((result)=>{
+      this.cartdata=result;})
+  })
+ }
+ 
+}
 }

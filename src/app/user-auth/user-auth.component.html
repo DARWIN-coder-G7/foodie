@@ -2,9 +2,9 @@
    <div *ngIf="!showlogin" class="sign-up">
     <h1>USER SIGN UP</h1>
     <form #usersignup="ngForm" class="common-form" (ngSubmit)="signup(usersignup.value)">
-        <input class="form-input" type="text"name ="name" placeholder="Enter username"ngModel />
+        <input class="form-input" type="text"name ="username" placeholder="Enter username"ngModel />
         <input class="form-input" 
-        type="email"name ="email"
+        type="email"name ="useremail"
          placeholder="Enter email"
          ngModel
          #email="ngModel" 
@@ -13,7 +13,7 @@
          <p class = "invalid-input"><span *ngIf="email.invalid && email.touched">please enter valid email</span>
          </p>
         <input class="form-input" type="password"
-        name ="password" placeholder="Enter password"
+        name ="userpass" placeholder="Enter password"
         ngModel 
         minlength="6"
         maxlength="14"
@@ -33,8 +33,8 @@
     <form #userlogin="ngForm" class="common-form" (ngSubmit)="login(userlogin.value)">
         <p class="error-p">{{userautherror}}</p> 
         <input class="form-input" 
-        type="email"name ="email" 
-        placeholder="Enter email" 
+        type="text"name ="username" 
+        placeholder="Enter username" 
         ngModel 
         #email="ngModel" 
         required
@@ -43,7 +43,7 @@
         </p>
         <input class="form-input" 
         type="password"
-        name ="password" 
+        name ="userpass" 
         placeholder="Enter password"
         ngModel 
         minlength="6"

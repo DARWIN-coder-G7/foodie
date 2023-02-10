@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import{HttpClient} from '@angular/common/http';
-import { login, signup } from '../data-type';
+import { adminlogin, login, signup } from '../data-type';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 @Injectable({
@@ -28,10 +28,11 @@ export class SellerService {
       this.router.navigate(['seller-home'])
     }
   }
-  userLogin(data:login){
-    this.http.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`,
+  userLogin(data:adminlogin){
+    this.http.get(`http://localhost:8080/api/admin/${data.adminName}/${data.adminKey}`,
     {observe:'response'}).subscribe((result:any)=>{
-    if(result && result.body && result.body.length == 1)
+      console.log(result);
+    if(result && result.body )
     {
       this.isloginerror.emit(false)
       localStorage.setItem('seller',JSON.stringify(result.body))
@@ -44,6 +45,6 @@ export class SellerService {
     console.warn(data)
   }
   changepin(data:any){
-    return this.http.put(`http://localhost:3000/seller/${data.id}`,data)
+    return this.http.put(`http://localhost:8080/api/admin/${data.adminId}`,data)
   }
 }

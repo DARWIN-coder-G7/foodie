@@ -18,9 +18,10 @@ ngOnInit(): void {
     this.productdata = data;
   })
 }
-submit(data:any){
+submit(data:product){
   if(this.productdata){
     data.id = this.productdata.id;
+    console.log(data);
   }
   this.product.updateproduct(data).subscribe((result)=>{
     if(result){

@@ -20,6 +20,11 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
 import { ChangepassComponent } from './changepass/changepass.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import{MaterialModule} from '../material-module';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
+
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,8 @@ import { ChangepassComponent } from './changepass/changepass.component';
     CartPageComponent,
     CheckoutComponent,
     ConfirmpageComponent,
-    ChangepassComponent
+    ChangepassComponent,
+    MyOrdersComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,12 @@ import { ChangepassComponent } from './changepass/changepass.component';
     FormsModule,
     HttpClientModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    NgxPaginationModule,
+    
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

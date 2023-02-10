@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { signup } from '../data-type';
+import { adminlogin, signup } from '../data-type';
 import { SellerService } from '../services/seller.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class SellerAuthComponent implements OnInit {
     console.warn(data)
     this.seller.userSignup(data)
   }
-  login(data: signup): void {
+  login(data: adminlogin): void {
     console.warn(data)
     this.seller.userLogin(data)
     this.seller.isloginerror.subscribe((isError)=>{

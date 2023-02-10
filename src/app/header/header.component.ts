@@ -19,16 +19,21 @@ ngOnInit(): void {
     if (val.url){
       if(localStorage.getItem('seller')&&val.url.includes('seller')){
         let sellerstore = localStorage.getItem('seller');
-        let sellerdata = sellerstore && JSON.parse(sellerstore)[0];
-        this.sellername = sellerdata.name;
+        //console.log(sellerstore);
+        let sellerdata = sellerstore && JSON.parse(sellerstore);
+        //console.log(sellerdata);
+        this.sellername = sellerdata.adminName;
         this.menutype ="seller"
       }
       else if(localStorage.getItem('user')){
         let userstore = localStorage.getItem('user');
+        //console.log(userstore);
         let userdata = userstore && JSON.parse(userstore);
-        this.username  = userdata.name;
+        //console.log(userdata+"re");
+        this.username  = userdata.username;
         this.menutype = 'user';
-        this.prod.getcartlist(userdata.id);
+        //console.log(userdata+"from");
+        this.prod.getcartlist(userdata.userid);
             }
       else{
         this.menutype="default"

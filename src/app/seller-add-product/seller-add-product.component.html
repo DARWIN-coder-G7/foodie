@@ -1,13 +1,20 @@
 <div class="add-product">
-    <h1>ADD NEW PRODUCT</h1>
+    <h1>ADD NEW MOVIE</h1>
     <p class ="message-p">{{addproductmessage}}</p>
     <form #addproduct = "ngForm" (ngSubmit)="submit(addproduct.value)" class = "common-form">
-        <input type="text" class="form-input" placeholder="Enter Product name" name="name" ngModel />
-        <input type="text" class="form-input" placeholder="Enter Product price" name="price" ngModel />
-        <input type="text" class="form-input" placeholder="Enter Product Category" name="category" ngModel />
-        <input type="text" class="form-input" placeholder="Enter hotel name" name="color" ngModel />
-        <textarea type="text" class="form-input" placeholder="Enter Product description" name="desc" ngModel ></textarea>
-        <input type="text" class="form-input" placeholder="Enter image url" name="image" ngModel />
-        <button class="form-button">ADD PRODUCT</button>
+        <input type="text" class="form-input" placeholder="Enter movie name" name="name" ngModel />
+        <input type="text" class="form-input" placeholder="Enter ticket price" name="price" ngModel />
+        <input type="text" class="form-input" placeholder="Enter genre" name="genre" ngModel />
+        <input type="text" class="form-input" placeholder="Enter lang" name="lang" ngModel /><br>
+        <label class="texcol">Show Time</label>
+        <input class="form-input" matInput type="datetime-local" placeholder="start date"  name="stime" ngModel ><br>
+        <label class="texcol">STATUS</label>
+       <mat-button-toggle-group name="status" aria-label="Font Style" ngModel>
+        <mat-button-toggle value="true">Enable</mat-button-toggle>
+        <mat-button-toggle value="false">Disable</mat-button-toggle>
+      </mat-button-toggle-group><br>
+        <textarea type="text" class="form-input" placeholder="Enter movie description" name="desc" ngModel ></textarea>
+        <input type="text" class="form-input" placeholder="Enter image url" name="img" ngModel />
+        <button class="form-button">ADD MOVIE</button>
     </form>
 </div>

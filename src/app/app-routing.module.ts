@@ -6,6 +6,7 @@ import { ChangepassComponent } from './changepass/changepass.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
 import { HomeComponent } from './home/home.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchComponent } from './search/search.component';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
@@ -65,6 +66,10 @@ path:'search/:query'
   component:ChangepassComponent,
   path:'changeit',
   canActivate:[AuthGuard]
+},
+{
+  component:MyOrdersComponent,
+  path:'myorders'
 }
 ];
 

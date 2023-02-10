@@ -12,10 +12,10 @@ export class ChangepassComponent {
   changepass(data:any){
     console.log(data)
     let passdata =  {
-      "name": "darwin",
-      "password": data,
-      "email": "admin@gmail.com",
-      "id": 1
+      "adminName": "darwin",
+      "adminKey": data,
+      //"email": "admin@gmail.com",
+      "adminId": 1
     }
     this.sell.changepin(passdata).subscribe((result)=>{
       if(result){
