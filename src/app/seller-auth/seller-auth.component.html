@@ -11,7 +11,7 @@
         </form>
     </div>
     <div *ngIf="showlogin" class="login">
-        <h1>Seller Log In</h1>
+        <h1>Admin Log In</h1>
         <p class = "error-p">{{authError}}</p>
         <form #Sellerlogin="ngForm" (ngSubmit)="login(Sellerlogin.value)" class="common-form">
             <input type="email" class="form-input" placeholder="Enter email" name="adminName" ngModel />

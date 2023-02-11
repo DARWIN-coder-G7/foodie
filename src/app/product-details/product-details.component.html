@@ -7,8 +7,8 @@
         <div class="details">
         <h1>{{productdata.name}}</h1>
         <h3>PRICE : {{productdata.price}}</h3>
-        <div>HOTEL : <h3 >{{productdata.stime}}</h3></div>
-        <h6>CATEGORY : {{productdata.genre}}</h6>
+        <div>SHOW TIME: <h3 >{{productdata.stime}}</h3></div>
+        <h6>GENRE : {{productdata.genre}}</h6>
         <h6>DESCRIPTION : {{productdata.desc}}</h6>
         <button class = "form-button" (click)="buynow()">BUY NOW</button>
         <button *ngIf="!removecart" class = "form-button" (click)="addtocart()">ADD TO CART</button>
