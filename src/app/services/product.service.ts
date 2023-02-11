@@ -15,7 +15,7 @@ export class ProductService {
       return this.http.get<product[]>(`http://localhost:8080/api/products`)
     }
     deleteproduct(id:number){
-      return this.http.delete(`http://localhost:8080/api/products/${id}`)
+      return this.http.delete<String>(`http://localhost:8080/api/products/`+id)
     }
     getproduct(id:string){
       return this.http.get<product>(`http://localhost:8080/api/products/${id}`);

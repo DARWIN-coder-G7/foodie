@@ -48,11 +48,14 @@ ngOnInit(): void {
 }
 deleteproduct(id:number){
   this.products.deleteproduct(id).subscribe((result)=>{
-    if(result){
+    
+      
       this.productstatusmessag = "Product is Deleted";
       this.list();
-    }
+    
   })
+  
+  //console.log(this.productstatusmessag)
   setTimeout(() => {
     this.productstatusmessag = undefined;
   },3000);
