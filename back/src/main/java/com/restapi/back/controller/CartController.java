@@ -42,7 +42,7 @@ private CartDataService cdi;
 	@DeleteMapping("{id}")
 	public ResponseEntity<String> deletecartbyid(@PathVariable("id") long id){
 		cdi.deleteCartdata(id);;
-		return new ResponseEntity<String>("",HttpStatus.OK);
+		return new ResponseEntity<String>("sucess!",HttpStatus.OK);
 	}
 	@DeleteMapping("/deluser")
 	public ResponseEntity<String> deleteproducts(@RequestParam("userid") long id){

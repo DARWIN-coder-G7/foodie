@@ -52,7 +52,7 @@ public ResponseEntity<Products> updateProducts(@PathVariable("id") long id
 @DeleteMapping("{id}")
 public ResponseEntity<String> deleteproducts(@PathVariable("id") long id){
 	productservice.deleteProduct(id);
-	return new ResponseEntity<String>("",HttpStatus.OK);
+	return new ResponseEntity<String>("sucess!",HttpStatus.OK);
 }
 //http://localhost:8080/api/products/search?query=berry
 // an api to search data
