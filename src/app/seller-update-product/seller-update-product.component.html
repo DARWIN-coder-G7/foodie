@@ -2,19 +2,18 @@
     <h1>UPDATE PRODUCT</h1>
     <p class ="message-p">{{productmessage}}</p>
     <form #addproduct = "ngForm" (ngSubmit)="submit(addproduct.value)" class = "common-form">
-        <input type="text" class="form-input" placeholder="Enter Movie name" name="name" ngModel = {{productdata?.name}} />
-        <input type="text" class="form-input" placeholder="Enter Movie price" name="price" ngModel = {{productdata?.price}} />
-        <input type="text" class="form-input" placeholder="Enter Movie Genre" name="genre" ngModel = {{productdata?.genre}} />
-        <label class="texcol">Show Time</label>
-        <input class="form-input" matInput type="datetime-local" placeholder="start date"  name="stime" ngModel = {{productdata?.stime}}><br>
+        <input type="text" class="form-input" placeholder="Enter Food name" name="name" ngModel = {{productdata?.name}} />
+        <input type="text" class="form-input" placeholder="Enter Food price" name="price" ngModel = {{productdata?.price}} />
+        <input type="text" class="form-input" placeholder="Enter Cuisine Name" name="genre" ngModel = {{productdata?.genre}} />
+        <input type="text" class="form-input" placeholder="Enter Hotel Name" name="stime" ngModel = {{productdata?.stime}} />
         <label class="texcol">STATUS</label>
        <mat-button-toggle-group  ngModel = {{productdata?.status}}
        name="status" aria-label="Font Style">
         <mat-button-toggle value="true">Enable</mat-button-toggle>
         <mat-button-toggle value="false">Disable</mat-button-toggle>
       </mat-button-toggle-group><br>
-        <input type="text" class="form-input" placeholder="Enter Movie Language" name="lang" ngModel = {{productdata?.lang}} />
-        <textarea type="text" class="form-input" placeholder="Enter Movie description" name="desc" ngModel = {{productdata?.desc}} ></textarea>
+        <input type="text" class="form-input" placeholder="Enter offer in %" name="lang" ngModel = {{productdata?.lang}} />
+        <textarea type="text" class="form-input" placeholder="Enter  description" name="desc" ngModel = {{productdata?.desc}} ></textarea>
         <input type="text" class="form-input" placeholder="Enter image url" name="img" ngModel = {{productdata?.img}} />
         <button class="form-button">UPDATE PRODUCT</button>
     </form>

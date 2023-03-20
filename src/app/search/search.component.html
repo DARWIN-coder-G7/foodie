@@ -1,7 +1,7 @@
 <div class="start">
     <ul>
         <li><mat-label>FILTER</mat-label>
-            <input class="form-input" matInput placeholder="Filter By Genre" (keyup)="Filterchange($event)">
+            <input class="form-input" matInput placeholder="Filter By Cuisine" (keyup)="Filterchange($event)">
             </li>
             <li>
                 <button  class="form-button" (click)="sortbyPrice()">SORT</button>
@@ -23,6 +23,7 @@
                 <p><b>{{item.price}}</b></p>
                 <p><span>{{item.stime}}</span><span>{{item.genre}}</span></p>
                 <p>{{item.desc}}</p>
+                <p class="flag-discount">{{item.lang}}% Off</p>
             </div>
         </div>
          </li>

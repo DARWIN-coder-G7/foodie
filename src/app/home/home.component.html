@@ -10,19 +10,21 @@
 	</ng-template>
 </ngb-carousel>
 <div class="product-list-wrapper">
-	<h1>MUST WATCH MOVIES</h1>
+	<h1>MUST TRY DISHES</h1>
      <div class="row">
 		<div class="col-sm-3" *ngFor="let item of trendyproducts">
 			<div class="product-item">
 				<a routerLink="/details/{{item.id}}"><img src="{{item.img}}"></a>
 				<div class="product-details">
-					<h6 class = "name-head"> <a routerLink="/details/{{item.id}}">{{item.name}}</a></h6>
+					<h3 class = "name-head"> <a routerLink="/details/{{item.id}}">{{item.name}}</a></h3>
 					<div class="class-price">
-						<h6>{{item.price}}</h6>
+						<h3>{{item.price}}</h3>
 					</div>
 					<div class="class-color">
-						<h6>{{item.stime}}</h6>
+						<h3>{{item.stime}}</h3>
+						<span class="flag-discount">{{item.lang}}% Off</span>
 					</div>
+					
 				</div>
 				<div class="product-footer">
 					<a routerLink="/details/{{item.id}}">view details</a>

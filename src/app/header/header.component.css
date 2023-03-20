@@ -3,12 +3,13 @@
     justify-content: space-between;
     background: black;
     border-radius: 5px;
-    
+
 }
 .nav h1{
     color: blueviolet;
     margin: 0;
     font-size: 40px;
+    padding-top: 2px;
 }
 .nav .nav-search{
     flex: 1;
@@ -65,4 +66,7 @@ h1 a{
 .suggested-search li a{
     cursor: pointer;
     color: rgb(170, 127, 255);
+}
+.con{
+    padding-top: 20px;
 }

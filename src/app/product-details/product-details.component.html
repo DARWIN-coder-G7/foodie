@@ -7,10 +7,11 @@
         <div class="details">
         <h1>{{productdata.name}}</h1>
         <h3>PRICE : {{productdata.price}}</h3>
-        <div>SHOW TIME: <h3 >{{productdata.stime}}</h3></div>
-        <h6>GENRE : {{productdata.genre}}</h6>
-        <h6>DESCRIPTION : {{productdata.desc}}</h6>
-        <button class = "form-button" (click)="buynow()">BUY NOW</button>
+        <h3>HOTEL: {{productdata.stime}}</h3>
+        <h3>CUISINE : {{productdata.genre}}</h3>
+        <h3>DESCRIPTION : {{productdata.desc}}</h3>
+        <span class="flag-discount">{{productdata.lang}}% Off</span>
+        <button class = "form-button" (click)="buynow()">ORDER NOW</button>
         <button *ngIf="!removecart" class = "form-button" (click)="addtocart()">ADD TO CART</button>
         <button *ngIf="removecart" class = "form-button" (click)="removefromcart(productdata.id)">REMOVE FROM CART</button>
         <div class="quantity-group">
